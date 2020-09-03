@@ -5,8 +5,10 @@ class MapPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black,
+    return Scaffold(
+      body: Center(
+        child: Text('MAPA PAGE'),
+      )
     );
   }
 }

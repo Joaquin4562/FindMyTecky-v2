@@ -19,7 +19,6 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
         vsync: this, duration: Duration(milliseconds: 4000));
 
     animationController.addListener(() {
-      print('Status ${animationController.status}');
       if (animationController.status == AnimationStatus.completed) {
         animationController.reverse();
       } else if (animationController.status == AnimationStatus.dismissed) {
@@ -27,6 +26,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
       }
     });
     move = Tween(begin: 0.0, end: 1.0).animate(animationController);
+    animationController.forward();
     super.initState();
   }
 
@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                   topRight: Radius.circular(20)),
                             ),
                             onPressed: () {
-                              Navigator.pushNamed(context, 'register');
+                              Navigator.pushReplacementNamed(context, 'register');
                             },
                           ),
                           const SizedBox(
@@ -180,7 +180,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                   topLeft: Radius.circular(20)),
                             ),
                             onPressed: () {
-                              Navigator.pushNamed(context, 'map');
+                              Navigator.pushReplacementNamed(context, 'loading');
                             },
                           ),
                         ],

@@ -1,3 +1,4 @@
+import 'package:find_my_tecky_v2/src/pages/loading.page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:find_my_tecky_v2/src/pages/acceso.gps.page.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         'login'   : ( _ ) => LoginPage(),
         'register': ( _ ) => RegisterPage(),
         'map'     : ( _ ) => MapPage(),
-        'acceso'  : ( _ ) => AccesoGpsPage()
+        'acceso'  : ( _ ) => AccesoGpsPage(),
+        'loading' : ( _ ) => LoadingPage(),
       },
       home: LoginPage()
     );

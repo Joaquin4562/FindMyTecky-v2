@@ -20,7 +20,6 @@ class _RegisterPageState extends State<RegisterPage>
         vsync: this, duration: Duration(milliseconds: 4000));
 
     animationController.addListener(() {
-      print('Status ${animationController.status}');
       if (animationController.status == AnimationStatus.completed) {
         animationController.reverse();
       } else if (animationController.status == AnimationStatus.dismissed) {
@@ -28,7 +27,13 @@ class _RegisterPageState extends State<RegisterPage>
       }
     });
     move = Tween(begin: 0.0, end: 1.0).animate(animationController);
+    animationController.forward();
     super.initState();
+  }
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -118,7 +123,7 @@ class _RegisterPageState extends State<RegisterPage>
                             elevation: 3,
                             color: _colorBase,
                             child: Text(
-                              'REGISTRAR',
+                              'INICIAR',
                               style: TextStyle(
                                   fontSize: 30,
                                   fontFamily: 'Dubai',
@@ -131,7 +136,7 @@ class _RegisterPageState extends State<RegisterPage>
                                   topRight: Radius.circular(20)),
                             ),
                             onPressed: () {
-                              Navigator.pushNamed(context, 'map');
+                              Navigator.pushReplacementNamed(context, 'loading');
                             },
                           ),
                           const SizedBox(
@@ -164,7 +169,7 @@ class _RegisterPageState extends State<RegisterPage>
                                   topLeft: Radius.circular(20)),
                             ),
                             onPressed: () {
-                              Navigator.pushNamed(context, 'login');
+                              Navigator.pushReplacementNamed(context, 'login');
                             },
                           ),
                         ],
