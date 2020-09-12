@@ -42,7 +42,8 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
     return Scaffold(
       body: SingleChildScrollView(
         child: ConstrainedBox(
-          constraints: BoxConstraints( maxHeight: MediaQuery.of(context).size.height ),
+          constraints:
+              BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
           child: Column(
             children: [
               Expanded(
@@ -63,11 +64,13 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                         animation: animationController,
                         builder: (context, Widget child) {
                           return Positioned(
-                              top: MediaQuery.of(context).size.height * 0.211,
-                              left: MediaQuery.of(context).size.width * 0.1,
-                              child: Transform.translate(
-                                  offset: Offset(move.value * 20, 0),
-                                  child: Image.asset('assets/img/troka.png')));
+                            top: MediaQuery.of(context).size.height * 0.211,
+                            left: MediaQuery.of(context).size.width * 0.1,
+                            child: Transform.translate(
+                              offset: Offset(move.value * 20, 0),
+                              child: Image.asset('assets/img/troka.png'),
+                            ),
+                          );
                         }),
                     Positioned(
                       top: 40,
@@ -110,7 +113,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: GestureDetector(
-                              onTap: (){
+                              onTap: () {
                                 print('object');
                               },
                               child: Text(
@@ -143,11 +146,13 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                             ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(20),
-                                  topRight: Radius.circular(20)),
+                                bottomRight: Radius.circular(20),
+                                topRight: Radius.circular(20),
+                              ),
                             ),
                             onPressed: () {
-                              Navigator.pushReplacementNamed(context, 'register');
+                              Navigator.pushReplacementNamed(
+                                  context, 'register');
                             },
                           ),
                           const SizedBox(
@@ -176,16 +181,18 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                             ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(20),
-                                  topLeft: Radius.circular(20)),
+                                bottomLeft: Radius.circular(20),
+                                topLeft: Radius.circular(20),
+                              ),
                             ),
                             onPressed: () {
-                              Navigator.pushReplacementNamed(context, 'loading');
+                              Navigator.pushReplacementNamed(
+                                  context, 'loading');
                             },
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               )
